@@ -13,4 +13,4 @@ cd StarWars
 ## Instalar dependencias
 ```bash
 pod install
-``
+```
