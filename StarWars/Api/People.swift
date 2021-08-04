@@ -1,19 +1,6 @@
-func getNumberFromUrl(_ url: String) -> Int {
-    if url != "" {
-        let url = url.split(separator: "/")
-        let last = String(url[url.count - 1])
-        if let id = Int(last) {
-            return id
-        } else {
-            return 0
-        }
-    }
-    return 0
-}
-
 struct Person: Identifiable {
     var id: Int {
-        getNumberFromUrl(url)
+        getIntFromUrl(url: url)
     }
 
     var name: String = ""
@@ -82,7 +69,7 @@ struct PeopleResults {
     let results: [Person]
     var nextPage: Int {
         if let url = next {
-            return getNumberFromUrl(url) + 1
+            return getQueryStringParameterInt(url: url, param: "page")
         }
         return 0
     }

@@ -22,7 +22,7 @@ private enum SWApi {
 }
 
 extension SWApi: TargetType {
-    var baseURL: URL { return URL(string: "https://swapi.dev/api")! }
+    var baseURL: URL { URL(string: "https://swapi.dev/api")! }
 
     var path: String {
         switch self {
@@ -59,11 +59,11 @@ extension SWApi: TargetType {
     }
 
     var method: Moya.Method {
-        return .get
+        .get
     }
 
     var sampleData: Data {
-        return Data()
+        Data()
     }
 
     var task: Task {
@@ -91,7 +91,7 @@ extension SWApi: TargetType {
         }
     }
 
-    var headers: [String: String]? { return ["Content-type": "application/json"] }
+    var headers: [String: String]? { ["Content-type": "application/json"] }
 }
 
 enum Api {
